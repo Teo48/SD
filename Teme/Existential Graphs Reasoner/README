@@ -1,0 +1,41 @@
+Copyright Anca-Ioana Rolea & Teodor Matei 313 CA - 2019
+_______________________________________________________
+	           ______ _____                 _     
+	     /\   |  ____/ ____|               | |    
+	    /  \  | |__ | |  __ _ __ __ _ _ __ | |__  
+	   / /\ \ |  __|| | |_ | '__/ _` | '_ \| '_ \ 
+	  / ____ \| |___| |__| | | | (_| | |_) | | | |
+	 /_/    \_\______\_____|_|  \__,_| .__/|_| |_|
+	                                 | |          
+	                                 |_|          
+______________________________________________________
+
+Contributia fiecaruia a fost 50 / 50 (Am discutat la fiecare functie in parte),
+eu focusandu-ma mai mult pe possible_deiterations, possible_erasures si
+double_cut, iar Anca pe possible_double_cuts, erase si deiterate. 
+
+Rezolvarea temei a constat in implementarea urmatoarelor functii:
+
+1) possible_double_cut() -> Intoarce o matrice cu pozitiile unde putem realiza
+	operatia de double cut. Parcurgem Parcurgem fiecare subgraf, verificam daca
+	indeplineste conditiile de double cut si retinem path-ul.
+2) double_cut() -> Am avut nevoie de o functie ajutatoare si anume utility_
+	_double_cut. Eliminam pe rand fiecare fiu din lista, intram in recursie pe
+    subgrafurile fiecarui fiu pana cand lista noastra are un singur
+    element. Eliminam taieturile care nu contin nimic intre ele si obtinem noul
+    AEGraph. In functia double cut, ne cream un AEGraph pe care-l legam la
+    instanta curenta, apelam utility_double_cut pentru a-l modifica si returnam
+    noul AEGraph.
+3) possible_erasures() -> Intoarce o matrice cu pozitiile unde putem realiza
+	operatia de erase. Idem possible_double_cuts cu respectarea conditiilor
+	impuse de erase si anume nu luam in calcul taietura care delimiteaza
+	acel subgraf, sa nu stergem un graf daca este singur in taietura.
+4) erase() -> Am avut nevoie de o functie ajutatoare si anume utility_erase.
+	Stergem recursiv subgrafurile respectiv atomii din graful initial
+    pe fiecare subgraf din lista primita ca parametru si obtinem noul AEGraph.
+5) possible_deiterations() -> Intoarce o matrice cu pozitiile unde putem realiza
+	operatia de deiteration. Ne-am folosit de functia get_paths_to pentru a
+	obtine path-urile unde putem face deiteration(atat pentru atomi, cat si 
+	pentru subgrafuri).
+6) deiteration() -> Am observat ca este similara cu erase asa ca doar am apelat
+	erase in cadrul acestei functii pentru a evita duplicarea de cod.
