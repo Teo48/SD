@@ -1,0 +1,35 @@
+Copyright Teodor Matei 313 - CA 2019
+ _   _ _                 _____ _                 _       _             
+| | | | |               /  ___(_)               | |     | |            
+| | | | |__   ___ _ __  \ `--. _ _ __ ___  _   _| | __ _| |_ ___  _ __ 
+| | | | '_ \ / _ \ '__|  `--. \ | '_ ` _ \| | | | |/ _` | __/ _ \| '__|
+| |_| | |_) |  __/ |    /\__/ / | | | | | | |_| | | (_| | || (_) | |   
+ \___/|_.__/ \___|_|    \____/|_|_| |_| |_|\__,_|_|\__,_|\__\___/|_|   
+                                                                       
+
+Implementarea temei a constat in rezolvarea urmatoarelor task-uri:
+
+1) Modelarea unei harti cu ajutorul grafurilor si a hashtable-urilor.
+	Am stocat in hashtable intersectiile(numele fiind cheia, indexul
+	nodului din graf valoarea). Am verificat daca pentru fiecare pereche
+	sursa - destinatie exista un drum si am afisat outputul cerut.
+2) Am calculat pentru fiecare pereche sursa - destinatie distanta minima
+	prin care se poate ajunge de la sursa la destinatie si am afisat-o.
+3) Am remodelat harta conform comenzilor primite ca input. Tot in cadrul
+	acestui task mi-am calculat matricea de distante ce contine distantele
+	de la fiecare nod la toate celelalte noduri din graf.
+4) Mi-am creat 3 vectori de tipul HeapNode pe care ii folosesc pentru
+	realizarea celor 3 topuri(La fiecare top daca vectorii au fost alterati
+	pe parcurs se va realiza o sortare, in caz contrar, doar vor fi afisate
+	topurile). Am utilizat un vector de tipul Driver
+	pentur a stoca toti soferii implicati in cadrul acestui task.
+	Am gasit in cazul fiecari comenezi de tipul "r" soferul care
+	poate indeplini cursa. In caz contrar daca rezultatul intors de metoda
+	check este -1 inseamna ca nu avem soferi disponibili, daca este -2
+	nu exista destinatii accesibile.
+5) M-am folosit de matricea distantelor calculata la task-ul 3 pentru a
+	determina distanta de la pozitia curenta a soferului la interesectiile
+	primite ca input si am pus conditia ca aceasta distanta sa fie mai mica
+	sau egala decat cantitatea de combustibil pe care acesta o are.
+	Am stocat numele intersectiilor respectiv distantele intr-un vector de tip
+	HeapNode pe care il sortez pentru a afisa output-ul cerut.
