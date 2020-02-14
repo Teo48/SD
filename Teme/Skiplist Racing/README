@@ -1,0 +1,32 @@
+Copyright Teodor Matei - 313 CA
+   _____ _    _       _      _     _     _____            _             
+  / ____| |  (_)     | |    (_)   | |   |  __ \          (_)            
+ | (___ | | ___ _ __ | |     _ ___| |_  | |__) |__ _  ___ _ _ __   __ _ 
+  \___ \| |/ | | '_ \| |    | / __| __| |  _  // _` |/ __| | '_ \ / _` |
+  ____) |   <| | |_) | |____| \__ | |_  | | \ | (_| | (__| | | | | (_| |
+ |_____/|_|\_|_| .__/|______|_|___/\__| |_|  \_\__,_|\___|_|_| |_|\__, |
+               | |                                                 __/ |
+               |_|                                                |___/ 
+
+
+Rezolvarea problemei a constat in implementarea structurii de date Skiplist,
+si crearea unui "joculet" ce simuleaza o cursa de masini.
+
+Mi-am definit o clasa Racer ce contine informatii referitoare la id-ul,
+timpul, punctajul, pozitia din cursa curenta, respectiv pozitia in urma
+printului pentru fiecare jucator. Am supraincarcat operatorii de comparare
+si asignare pentru a putea introduce mai usor un Racer in Skiplist.
+Astfel, in momentul in care inserez un Racer in Skiplist, el va fi introdus
+dupa urmatoarele criterii: Daca in Skiplist nu exista un Racer cu acelasi
+punctaj, el va fi introdus dupa punctaj descrescator, in cazul in care exista
+doi sau mai multi Raceri cu acelasi punctaj, ei vor fi introdusi dupa id
+in ordine crescatoare. (O(logn))
+
+Imi creez un array de tipul Racer pe care il initializez inainte de inceperea
+jocului. Citesc timpii, ii asignez fiecarui player timpul corespunzator,
+calculez punctajul fiecarui participant in functie de timpul pe care l-a 
+obtinut si marchez pozitia fiecarui in cursa respectiva. In momentul intalnirii
+operatiei "print" racerii imi vor fi introdusi in SkipList dupa criteriile
+definite mai sus. Ma leg la header-ul SkipList-ului, cobor pe nivelul 0 (unde
+stiu sigur ca am toti playerii) si realizez clasamentul conform cerintei. (O(n))
+
