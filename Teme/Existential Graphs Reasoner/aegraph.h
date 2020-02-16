@@ -1,4 +1,3 @@
-// Copyright 2019 Luca Istrate, Danut Matei
 #ifndef AEGRAPH_H_
 #define AEGRAPH_H_
 
