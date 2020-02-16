@@ -1,6 +1,4 @@
 // Copyright Teodor Matei 313 - CA
-#include <stdlib.h>
-#include <string.h>
 #include <bits/stdc++.h>
 #include "./SkipList.h"
 #include "Racer.h"
