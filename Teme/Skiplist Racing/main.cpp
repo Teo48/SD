@@ -1,10 +1,5 @@
 // Copyright Teodor Matei - 313 CA
 #include <bits/stdc++.h>
-#include <math.h>
-#include <iostream>
-#include <fstream>
-#include <algorithm>
-#include <string>
 #include "SkipList.h"
 #include "Racer.h"
 #include "Functions.h"
